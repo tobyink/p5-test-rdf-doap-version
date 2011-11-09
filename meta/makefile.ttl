@@ -7,6 +7,7 @@
 	:version_from _:main ;
 	:readme_from _:main ;
 	:test_requires "Test::More 0.61" ;
+	:requires "parent" ;
 	:requires "Test::More" ;
 	:requires "URI::Escape" ;
 	:requires "common::sense" ;

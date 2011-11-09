@@ -13,7 +13,7 @@ our $VERSION = '0.002';
 our @EXPORT  = qw(doap_version_ok);
 our $DOAP    = RDF::Trine::Namespace->new('http://usefulinc.com/ns/doap#');
 
-use base qw[Exporter];
+use parent qw[Exporter];
 
 sub doap_version_ok
 {
