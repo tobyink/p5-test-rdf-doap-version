@@ -15,7 +15,6 @@ dist:v_0-001
 	:file-release   <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Test-RDF-DOAP-Version-0.001.tar.gz> ;
 	rdfs:label      "Initial release" .
 
-
 dist:project :release dist:v_0-002 .
 dist:v_0-002
 	a               :Version ;
@@ -25,4 +24,17 @@ dist:v_0-002
 	dcs:changeset [
 		dcs:versus dist:v_0-001 ;
 		dcs:item   [ a dcs:Packaging ; rdfs:label "Upgrade Module::Package::RDF version."@en ] 
+	] .
+
+dist:project :release dist:v_0-003 .
+dist:v_0-003
+	a               :Version ;
+	dc:issued       "2011-11-27"^^xsd:date ;
+	:revision       "0.003"^^xsd:string ;
+	:file-release   <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Test-RDF-DOAP-Version-0.003.tar.gz> ;
+	dcs:changeset [
+		dcs:versus dist:v_0-002 ;
+		dcs:item   [ rdfs:label "Better diagnostic messages if the test fails."@en ] ;
+		dcs:item   [ rdfs:label "use parent instead of base."@en ; a dcs:Update ] ;
+		dcs:item   [ rdfs:label "use 5.010"@en ; a dcs:Update ] 
 	] .

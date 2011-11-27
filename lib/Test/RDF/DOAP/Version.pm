@@ -1,6 +1,6 @@
 package Test::RDF::DOAP::Version;
 
-use 5.008;
+use 5.010;
 use common::sense;
 use constant { FALSE => 0, TRUE => 1 };
 use utf8;
@@ -9,7 +9,7 @@ use RDF::Trine qw[iri variable literal blank statement];
 use Test::More;
 use URI::Escape qw[uri_escape];
 
-our $VERSION = '0.002';
+our $VERSION = '0.003';
 our @EXPORT  = qw(doap_version_ok);
 our $DOAP    = RDF::Trine::Namespace->new('http://usefulinc.com/ns/doap#');
 
@@ -18,6 +18,8 @@ use parent qw[Exporter];
 sub doap_version_ok
 {
 	my ($dist, $module) = @_;
+	unless ($module)
+		{ ($module = $dist) =~ s{-}{::}g; }
 
 	eval "use $module;";
 	my $version  = $module->VERSION;	
@@ -61,11 +63,23 @@ sub doap_version_ok
 		return 1;
 	}
 
+	diag("${module}->VERSION = $version");
+	$pattern = RDF::Trine::Pattern->new(
+		statement($dist_uri, $DOAP->release, variable('v')),
+		statement(variable('v'), $DOAP->revision, variable('r')),
+                );
+	$iter = $model->get_pattern($pattern);
+	my $found = 0;
+	while (my $result = $iter->next)
+	{
+		diag("Found metadata for: ".$result->as_string);
+		$found++;
+	}
+	diag("Found no metadata for any versions.") unless $found;
+
 	fail('doap_version_ok');
 	return 0;
 }
-
-# Your code goes here
 
 TRUE;
 
@@ -110,4 +124,9 @@ This software is copyright (c) 2011 by Toby Inkster.
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
+=head1 DISCLAIMER OF WARRANTIES
+
+THIS PACKAGE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR IMPLIED
+WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
+MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 
