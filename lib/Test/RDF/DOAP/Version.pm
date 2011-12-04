@@ -9,7 +9,7 @@ use RDF::Trine qw[iri variable literal blank statement];
 use Test::More;
 use URI::Escape qw[uri_escape];
 
-our $VERSION = '0.003';
+our $VERSION = '0.004';
 our @EXPORT  = qw(doap_version_ok);
 our $DOAP    = RDF::Trine::Namespace->new('http://usefulinc.com/ns/doap#');
 
@@ -93,14 +93,14 @@ Test::RDF::DOAP::Version - tests 'meta/changes.ttl' is up to date
 
 =item C<< doap_version_ok($dist, $module) >>
 
-Checks the distribution metadata matches the pattern:
+Reads all RDF in a distribution's "meta" directory and checks the
+distribution metadata matches the pattern:
 
-	?dist doap:release ?rel .
+	?uri doap:release ?rel .
 	?rel doap:revision ?ver .
 
-Where ?dist is the URI C<< http://purl.org/NET/cpan-uri/dist/%s/project >>
-(C<< %s >> having been substituted for $dist) and ?ver is the $VERSION from
-$module, as an xsd:string or plain literal.
+Where ?uri is the URI C<< http://purl.org/NET/cpan-uri/dist/$dist/project >>
+and ?ver is C<< $module->VERSION >>, as an xsd:string or plain literal.
 
 =back
 
