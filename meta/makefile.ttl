@@ -1,17 +1,16 @@
-# This file provides instructions for packaging.
-
 @prefix : <http://purl.org/NET/cpan-uri/terms#> .
 
 <http://purl.org/NET/cpan-uri/dist/Test-RDF-DOAP-Version/project>
-	:perl_version_from _:main ;
-	:version_from _:main ;
-	:readme_from _:main ;
-	:test_requires "Test::More 0.61" ;
-	:requires "parent" ;
-	:requires "Test::More" ;
-	:requires "URI::Escape" ;
-	:requires "common::sense" ;
-	:requires "RDF::Trine" .
+	:perl_version_from _:main;
+	:version_from _:main;
+	:readme_from _:main;
+	:test_requires "Test::More 0.61";
+	:requires "Test::More";
+	:requires "URI::Escape";
+	:requires "RDF::TriN3 0.200";
+	:requires "RDF::Trine 0.135".
 
-_:main <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileName> "lib/Test/RDF/DOAP/Version.pm" .
+_:main
+	<http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileName>
+		"lib/Test/RDF/DOAP/Version.pm".
 

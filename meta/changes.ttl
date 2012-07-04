@@ -49,3 +49,14 @@ dist:v_0-004
 		dcs:versus dist:v_0-003 ;
 		dcs:item   [ rdfs:label "Newer version of Module::Package::RDF"@en ; a dcs:Packaging, dcs:Bugfix ] 
 	] .
+
+dist:project :release dist:v_0-005 .
+dist:v_0-005
+	a               :Version ;
+	dc:issued       "2012-07-04"^^xsd:date ;
+	:revision       "0.005"^^xsd:string ;
+	:file-release   <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Test-RDF-DOAP-Version-0.005.tar.gz> ;
+	dcs:changeset [
+		dcs:versus dist:v_0-004 ;
+		dcs:item   [ rdfs:label "Support changelogs written in Pretdsl."@en; a dcs:Update ] 
+	] .

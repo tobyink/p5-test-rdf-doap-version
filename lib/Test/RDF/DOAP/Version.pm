@@ -1,7 +1,7 @@
 package Test::RDF::DOAP::Version;
 
 use 5.010;
-use common::sense;
+use strict;
 use constant { FALSE => 0, TRUE => 1 };
 use utf8;
 
@@ -9,11 +9,11 @@ use RDF::Trine qw[iri variable literal blank statement];
 use Test::More;
 use URI::Escape qw[uri_escape];
 
-our $VERSION = '0.004';
+our $VERSION = '0.005';
 our @EXPORT  = qw(doap_version_ok);
 our $DOAP    = RDF::Trine::Namespace->new('http://usefulinc.com/ns/doap#');
 
-use parent qw[Exporter];
+use base qw[Exporter];
 
 sub doap_version_ok
 {
@@ -39,6 +39,13 @@ sub doap_version_ok
 	{
 		my $iri = URI::file->new_abs($_);
 		$rdfxml->parse_file_into_model("$iri", $_, $model);
+	}
+	
+	my $pretdsl = RDF::TrineX::Parser::Pretdsl->new;
+	while (<meta/*.{pret,pretdsl}>)
+	{
+		my $iri = URI::file->new_abs($_);
+		$pretdsl->parse_file_into_model("$iri", $_, $model);
 	}
 	
 	my $pattern = RDF::Trine::Pattern->new(
@@ -119,7 +126,7 @@ Toby Inkster E<lt>tobyink@cpan.orgE<gt>.
 
 =head1 COPYRIGHT AND LICENCE
 
-This software is copyright (c) 2011 by Toby Inkster.
+This software is copyright (c) 2011-2012 by Toby Inkster.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
