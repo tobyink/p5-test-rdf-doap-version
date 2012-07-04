@@ -6,10 +6,11 @@ use constant { FALSE => 0, TRUE => 1 };
 use utf8;
 
 use RDF::Trine qw[iri variable literal blank statement];
+use RDF::TrineX::Parser::Pretdsl;
 use Test::More;
 use URI::Escape qw[uri_escape];
 
-our $VERSION = '0.005';
+our $VERSION = '0.006';
 our @EXPORT  = qw(doap_version_ok);
 our $DOAP    = RDF::Trine::Namespace->new('http://usefulinc.com/ns/doap#');
 
