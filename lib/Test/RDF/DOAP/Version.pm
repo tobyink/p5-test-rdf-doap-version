@@ -10,7 +10,7 @@ use RDF::TrineX::Parser::Pretdsl;
 use Test::More;
 use URI::Escape qw[uri_escape];
 
-our $VERSION = '0.006';
+our $VERSION = '0.007';
 our @EXPORT  = qw(doap_version_ok);
 our $DOAP    = RDF::Trine::Namespace->new('http://usefulinc.com/ns/doap#');
 
@@ -62,7 +62,7 @@ sub doap_version_ok
 
 	$pattern = RDF::Trine::Pattern->new(
 		statement($dist_uri, $DOAP->release, variable('v')),
-		statement(variable('v'), $DOAP->revision, literal($version)),
+		statement(variable('v'), $DOAP->revision, literal($version//'0')),
 		);
 	$iter = $model->get_pattern($pattern);
 	while (my $result = $iter->next)

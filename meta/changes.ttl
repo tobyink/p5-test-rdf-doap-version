@@ -71,3 +71,14 @@ dist:v_0-006
 		dcs:versus dist:v_0-005 ;
 		dcs:item   [ rdfs:label "Ooops, forgot to 'use RDF::TrineX::Parser::Pretdsl'."@en; a dcs:Bugfix ] 
 	] .
+
+dist:project :release dist:v_0-007 .
+dist:v_0-007
+	a               :Version ;
+	dc:issued       "2012-07-05"^^xsd:date ;
+	:revision       "0.007"^^xsd:string ;
+	:file-release   <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Test-RDF-DOAP-Version-0.007.tar.gz> ;
+	dcs:changeset [
+		dcs:versus dist:v_0-006 ;
+		dcs:item   [ rdfs:label "Bump RDF::TriN3 dependency to 0.201"@en; a dcs:Packaging ] 
+	] .
