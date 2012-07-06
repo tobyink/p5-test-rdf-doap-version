@@ -81,5 +81,16 @@ dist:v_0-007
 	rdfs:label      "Bond, James Bond";
 	dcs:changeset [
 		dcs:versus dist:v_0-006 ;
-		dcs:item   [ rdfs:label "Bump RDF::TriN3 dependency to 0.201"@en; a dcs:Packaging ] 
+		dcs:item   [ rdfs:label "Bump RDF::TriN3 dependency to 0.201."@en; a dcs:Packaging ] 
+	] .
+
+dist:project :release dist:v_0-008 .
+dist:v_0-008
+	a               :Version ;
+	dc:issued       "2012-07-06"^^xsd:date ;
+	:revision       "0.008"^^xsd:string ;
+	:file-release   <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Test-RDF-DOAP-Version-0.008.tar.gz> ;
+	dcs:changeset [
+		dcs:versus dist:v_0-007 ;
+		dcs:item   [ rdfs:label "Bump RDF::TriN3 dependency to 0.202."@en; a dcs:Packaging ] 
 	] .

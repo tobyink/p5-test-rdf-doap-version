@@ -7,7 +7,7 @@
 	:test_requires "Test::More 0.61";
 	:requires "Test::More";
 	:requires "URI::Escape";
-	:requires "RDF::TriN3 0.201";
+	:requires "RDF::TriN3 0.202";
 	:requires "RDF::Trine 0.135".
 
 _:main

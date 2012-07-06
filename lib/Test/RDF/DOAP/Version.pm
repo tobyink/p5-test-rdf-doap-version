@@ -10,7 +10,7 @@ use RDF::TrineX::Parser::Pretdsl;
 use Test::More;
 use URI::Escape qw[uri_escape];
 
-our $VERSION = '0.007';
+our $VERSION = '0.008';
 our @EXPORT  = qw(doap_version_ok);
 our $DOAP    = RDF::Trine::Namespace->new('http://usefulinc.com/ns/doap#');
 
