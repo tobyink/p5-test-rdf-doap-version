@@ -94,3 +94,15 @@ dist:v_0-008
 		dcs:versus dist:v_0-007 ;
 		dcs:item   [ rdfs:label "Bump RDF::TriN3 dependency to 0.202."@en; a dcs:Packaging ] 
 	] .
+
+dist:project :release dist:v_0-009 .
+dist:v_0-009
+	a               :Version ;
+	dc:issued       "2013-05-19"^^xsd:date ;
+	:revision       "0.009"^^xsd:string ;
+	:file-release   <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Test-RDF-DOAP-Version-0.009.tar.gz> ;
+	dcs:changeset [
+		dcs:versus dist:v_0-008 ;
+		dcs:item   [ rdfs:label "Explicitly load URI::file."@en; a dcs:Bugfix ] 
+		dcs:item   [ rdfs:label "General tidy-up."@en; a dcs:Packaging ] 
+	] .
