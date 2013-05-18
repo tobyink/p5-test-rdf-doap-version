@@ -90,6 +90,14 @@ sub doap_version_ok
 
 1;
 
+__END__
+
+=pod
+
+=encoding utf-8
+
+=for stopwords ver xsd:string
+
 =head1 NAME
 
 Test::RDF::DOAP::Version - tests 'meta/changes.ttl' is up to date
