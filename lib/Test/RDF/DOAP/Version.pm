@@ -9,6 +9,7 @@ use RDF::Trine qw[iri variable literal blank statement];
 use RDF::TrineX::Parser::Pretdsl;
 use Test::More;
 use URI::Escape qw[uri_escape];
+use URI::file;
 
 our $VERSION = '0.008';
 our @EXPORT  = qw(doap_version_ok);
