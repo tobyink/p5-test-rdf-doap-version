@@ -106,3 +106,10 @@ dist:v_0-009
 		dcs:item   [ rdfs:label "Explicitly load URI::file."@en; a dcs:Bugfix ] ;
 		dcs:item   [ rdfs:label "General tidy-up."@en; a dcs:Packaging ] 
 	] .
+
+`Test-RDF-DOAP-Version 0.010 cpan:TOBYINK`
+	issued    2014-09-10;
+	changeset [
+		item "Switch to Dist::Inkt."^^Packaging;
+	].
+

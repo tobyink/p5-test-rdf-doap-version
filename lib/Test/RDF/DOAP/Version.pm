@@ -10,7 +10,7 @@ use Test::More;
 use URI::Escape qw[uri_escape];
 use URI::file;
 
-our $VERSION = '0.009';
+our $VERSION = '0.010';
 our @EXPORT  = qw(doap_version_ok);
 our $DOAP    = RDF::Trine::Namespace->new('http://usefulinc.com/ns/doap#');
 
